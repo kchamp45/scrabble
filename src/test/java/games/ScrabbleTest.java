@@ -2,8 +2,6 @@ package games;
 
 import org.junit.*;
 import static org.junit.Assert.*;
-import java.util.List;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +17,6 @@ public class ScrabbleTest {
             Integer expected = 1;
             assertEquals(expected, testScrabble.calculateScore("a"));
         }
-
         @Test
         public void calculateScore_returnsScoreForTwoLetter_2() throws Exception {
             Scrabble testScrabble = new Scrabble();

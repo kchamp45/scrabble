@@ -1,6 +1,9 @@
+import games.Scrabble;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Guest on 8/1/17.
@@ -12,13 +15,14 @@ public class App {
 
         try {
             String userInput = bufferedReader.readLine();
-            char InputNow[] = userInput.toCharArray();
-            for (int i = 0; i < InputNow.length; i++) {
-                int calculateScore(InputNow[i]);
+            String userInputLowerCase = userInput.toLowerCase();
+            Scrabble scrabble = new Scrabble();
+            Integer scrabbleResults = scrabble.calculateScore(userInputLowerCase);
+            System.out.println("Here is your score:" + scrabbleResults);
             }
-        }
         catch(IOException e)
         { e.printStackTrace();
         }
     }
 }
+

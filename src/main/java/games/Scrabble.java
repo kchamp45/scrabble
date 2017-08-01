@@ -1,13 +1,13 @@
 package games;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class Scrabble {
+    Map<Character, Integer> numbersAndLetters = new HashMap<Character, Integer>();
 
     public Scrabble() {
-        Map<Character, Integer> numbersAndLetters = new HashMap<Character, Integer>();
+
         char Group1[] = {'a', 'e', 'i', 'o', 'u', 'l', 'n', 'r', 's', 't'};
         for (int i = 0; i < Group1.length; i++) {
             numbersAndLetters.put(Group1[i], 1);
@@ -37,5 +37,12 @@ public class Scrabble {
             numbersAndLetters.put(Group7[o], 10);
         }
     }
-
+    public Integer calculateScore(String userInputLowerCase) {
+        int results = 0;
+        char userInputLetter[] = userInputLowerCase.toCharArray();
+        for (int i = 0; i < userInputLetter.length; i++) {
+           results += numbersAndLetters.get(userInputLetter[i]);
+        }
+        return results;
+    }
 }
